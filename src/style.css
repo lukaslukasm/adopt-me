@@ -232,10 +232,15 @@ option {
 .search-params button:hover,
 .btn:hover {
   background-color: white !important;
+  color: black !important;
 }
 
 .btn:hover a {
   color: black !important;
+}
+
+.details button:hover {
+  text-decoration: underline;
 }
 
 #modal {

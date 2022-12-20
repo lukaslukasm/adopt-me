@@ -8,7 +8,8 @@
     "format:check": "prettier --check \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --quiet ",
     "dev": "parcel src/index.html",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build": "parcel build"
   },
   "keywords": [],
   "author": "",
