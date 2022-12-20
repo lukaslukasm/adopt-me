@@ -1,0 +1,399 @@
+* {
+  box-sizing: border-box;
+  color: black;
+}
+
+body {
+  margin: 0 auto;
+  margin-top: 64px;
+  padding: 0;
+  font-family: "Helvetica Neue", Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 1100px;
+}
+
+select,
+input {
+  background: #eee;
+  border-radius: 8px;
+  margin: 4px;
+  border: none;
+  font-size: 16px;
+  padding: 4px 8px;
+  min-width: 200px;
+}
+
+.search-form-header {
+  font-weight: bold;
+  text-align: left;
+  padding: 4px 8px;
+  width: 100%;
+  font-size: 22px;
+  margin: 0;
+  grid-column: span 3;
+}
+
+.details {
+  margin: 0 auto;
+  padding: 15px;
+  margin-bottom: 25px;
+}
+
+.pet {
+  height: 130px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid black;
+  margin: 0 auto;
+  margin-bottom: 16px;
+  width: calc(100% - 32px);
+}
+
+.pet > * {
+  background-color: none !important;
+}
+
+.pet:hover {
+  background-color: #eee;
+}
+
+.pet img {
+  width: 100px;
+  min-height: 100px;
+}
+
+.info {
+  float: left;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.image-container {
+  /* clip-path: circle(50% at 50% 50%); */
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin: 0px 20px 0px 10px;
+}
+
+.pet h1 {
+  white-space: nowrap;
+  font-weight: bold;
+  font-size: min(30px, 7vw);
+  width: 95%;
+  overflow: hidden;
+  margin: 0;
+  text-overflow: ellipsis;
+}
+
+.search-params form {
+  border-top: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 200px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.search-params label {
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  align-items: center;
+  padding-left: 8px;
+}
+
+header > a,
+#root > div > h1 {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.pet h2 {
+  white-space: nowrap;
+  font-weight: normal;
+  font-size: 20px;
+  margin: 0;
+  display: flex;
+  gap: 6px;
+  text-overflow: ellipsis;
+}
+
+header a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 900;
+  display: block;
+  font-size: min(2rem, 8vw);
+  margin: 0 16px;
+  line-height: 1;
+}
+
+header h1 {
+  line-height: 1;
+  margin: 0;
+  text-align: center;
+}
+
+header {
+  text-align: left;
+  border-bottom: 1px solid black;
+  padding-bottom: 24px;
+}
+
+.details p {
+  line-height: 1.5;
+  padding: 0px 15px;
+}
+
+.details h1 {
+  text-align: center;
+
+  font-size: 60px;
+  margin: 5px 0px;
+}
+
+.details h2 {
+  text-align: center;
+  margin: 5px 0px 20px 0px;
+}
+
+.carousel {
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: center;
+  width: 100%;
+  margin-top: 8px;
+  justify-content: space-between;
+}
+
+.carousel > img {
+  max-width: 50%;
+  max-height: 400px;
+}
+
+.carousel-smaller {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.carousel-smaller > img {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  margin: 15px;
+  cursor: pointer;
+}
+
+.carousel-smaller > img.active {
+  opacity: 0.6;
+}
+
+.results {
+  border-top: 1px solid black;
+  padding-top: 24px;
+}
+
+.card {
+  width: 80px;
+  height: 130px;
+
+  position: relative;
+  opacity: 0;
+  display: flex;
+}
+
+option {
+  font-size: 16px;
+}
+
+.search-params button,
+.details button {
+  padding: 8px;
+  text-transform: uppercase;
+  color: white;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  grid-row: span 2;
+  transition: all 0.1s ease-in-out;
+  border-top: 1px solid black;
+}
+
+.search-params button:hover,
+.btn:hover {
+  background-color: white !important;
+}
+
+.btn:hover a {
+  color: black !important;
+}
+
+#modal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  backdrop-filter: blur(10px);
+}
+
+#modal .btn a {
+  color: white;
+  text-decoration: none;
+}
+
+#modal .btn,
+#modal button {
+  font-weight: bold;
+  color: black;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 32px;
+  text-align: center;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  width: 50%;
+  font-size: inherit;
+}
+
+#modal button {
+  border: none;
+}
+
+#modal button:hover {
+  text-decoration: underline;
+}
+
+#modal:empty {
+  display: none;
+}
+
+#modal > div {
+  background-color: white;
+  width: min(500px, 95%);
+  text-align: center;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.buttons {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-top: 1px solid black;
+}
+
+.btn {
+  border-right: 1px solid black;
+}
+
+.search-params button {
+  order: 4;
+}
+
+.search-params label:nth-of-type(1) {
+  order: 1;
+}
+.search-params label:nth-of-type(2) {
+  order: 5;
+}
+.search-params label:nth-of-type(3) {
+  order: 3;
+}
+.search-params label:nth-of-type(4) {
+  order: 7;
+}
+
+.details > div > button {
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+@media only screen and (max-width: 800px) {
+  .search {
+    width: 55%;
+    padding: 15px;
+
+    float: left;
+    margin-bottom: 25px;
+  }
+
+  .search-params button {
+    grid-row: span 4;
+    order: 2;
+  }
+
+  .search-form-header {
+    grid-column: span 2;
+  }
+
+  .search-params form {
+    grid-template-columns: 1fr 200px;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .pet h2 {
+    flex-direction: column;
+    font-size: 16px;
+  }
+
+  .carousel > img {
+    max-width: 75%;
+    height: auto;
+  }
+
+  .pet {
+    justify-content: flex-start;
+  }
+
+  .carousel {
+    flex-direction: column;
+  }
+
+  .carousel-smaller {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .search-params form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .search-params button {
+    order: 8;
+  }
+
+  .search-params label {
+    border-right: none;
+  }
+
+  .carousel-smaller > img {
+    width: 100px;
+    height: 100px;
+  }
+}
