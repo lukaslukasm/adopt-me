@@ -20,7 +20,7 @@ const Pet: FunctionComponent<IProps> = ({
   id,
 }) => {
   //placeholder image
-  let hero = "http://pet-images.dev-apis.com/pets/none.jpg";
+  let hero = "https://pet-images.dev-apis.com/pets/none.jpg";
   if (images.length) hero = images[0];
 
   return (

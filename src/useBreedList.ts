@@ -20,7 +20,7 @@ function useBreedList(animal: Animal) {
       setBreedList([]); //nechcem byt v medzistave. nechcem aby po starom requeste mi tam ostali vysiet stare zvery
       setStatus("loading");
       const res = await fetch(
-        `http://pets-v2.dev-apis.com/breeds?animal=${animal}`
+        `https://pets-v2.dev-apis.com/breeds?animal=${animal}`
       );
 
       const json = (await res.json()) as BreedListAPIResponse;
