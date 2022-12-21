@@ -68,9 +68,13 @@ class Details extends Component<{ params: { id?: string } }> {
                 <div className="buttons">
                   <ThemeContext.Consumer>
                     {([theme]) => (
-                      <span className="btn" style={{ background: theme }}>
-                        <a href="https://bit.ly/pet-adopt">Yes</a>
-                      </span>
+                      <a
+                        className="btn"
+                        style={{ background: theme }}
+                        href="https://bit.ly/pet-adopt"
+                      >
+                        Yes
+                      </a>
                     )}
                   </ThemeContext.Consumer>
                   <button onClick={this.toggleModal}>No</button>

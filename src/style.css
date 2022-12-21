@@ -258,11 +258,6 @@ option {
   backdrop-filter: blur(10px);
 }
 
-#modal .btn a {
-  color: white;
-  text-decoration: none;
-}
-
 #modal .btn,
 #modal button {
   font-weight: bold;
@@ -278,6 +273,11 @@ option {
   cursor: pointer;
   width: 50%;
   font-size: inherit;
+}
+
+#modal .btn {
+  color: white;
+  text-decoration: none;
 }
 
 #modal button {
